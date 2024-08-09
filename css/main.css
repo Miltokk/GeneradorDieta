@@ -1,0 +1,114 @@
+
+#h2formulario{
+    text-align: center; 
+    color:#080808;
+}
+
+h2{
+    text-align: center; 
+    color:#fff;
+}
+
+
+body{
+    background-color: #9ACD32;
+}
+
+.contenido{
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+}
+
+#divFormulario{
+    align-items: center;
+    margin: 30px auto;
+    padding: 15px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    background-color: #fff;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+}
+
+h1{
+    text-align: center;
+    color:#fff;
+}
+.info-container {
+    margin: 20px auto;
+    padding: 5px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    background-color:  #F5F5DC;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    display: grid;
+    grid-template-columns:repeat(9, 1fr) ;
+}
+.info-container h2 {
+    margin-top: 0;
+}
+.info-container p {
+    margin: 10px 0;
+}
+
+.calendario {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 10px;
+    background-color:  #F5F5DC;
+}
+.dia {
+    border: 1px solid #ddd;
+    padding: 10px;
+    box-shadow: 0 0 5px rgba(0,0,0,0.1);
+}
+.dia h3 {
+    margin-top: 0;
+    text-align: center;
+}
+.comida {
+    margin: 10px 0;
+}
+.comida label {
+    display: block;
+    font-weight: bold;
+    color: #000;;
+}
+
+#botonesCalendario{
+    display: grid;
+    grid-template-columns:repeat(7, 1fr) ;
+}
+
+.botonMarcado{
+    background-color:#525252;
+    color: #fbfcfc;
+}
+
+#sinDietaSegunCal {
+    position: fixed;
+    width: 45vw;
+    height: 60%;
+    background: white;
+    border: 1px solid black;
+    padding: 10px;
+    margin: auto;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    z-index: 10;    
+}  
+#sinDietaSegunCal h1 {
+    color:#000;
+}
+
+@media (max-width: 1250px) {
+    .info-container {
+        grid-template-columns:repeat(3, 1fr) ;
+    }
+    .calendario {
+    grid-template-columns: repeat(1, 1fr);
+    }
+}
