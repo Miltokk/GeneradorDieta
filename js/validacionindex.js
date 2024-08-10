@@ -2434,6 +2434,16 @@ if (datosGuardados) {
             let inputMin=parseInt(document.getElementById("rangomin").value);
             let inputMax=parseInt(document.getElementById("rangomax").value);
             filtrarDietaSegunRangoCliente(inputMin,inputMax);
+            idCaloriasBotones.forEach((idboton, index) => {
+                const botonDietaOpcional = document.getElementById("botoncal" + idboton);
+                if (botonDietaOpcional) {
+                    botonDietaOpcional.addEventListener('click', () => {
+                        datosUsuario.cal = idboton;
+                        localStorage.setItem("datosUsuario", JSON.stringify(datosUsuario));
+                        window.location.href = "index.html";
+                    });
+                }
+            });
         });
         let botonlimpiarFiltros=document.getElementById("limpiarFiltros");
         botonlimpiarFiltros.addEventListener('click', function (event) {
@@ -2446,6 +2456,8 @@ if (datosGuardados) {
             localStorage.removeItem("datosUsuario");
             window.location.href = "index.html";
         });
+
+
     }
     else {
         document.title = 'Dieta'
@@ -2922,6 +2934,7 @@ function filtrarDietaSegunRangoCliente(mincal, maxcal) {
         htmlbotones=`<p>No tenemos dietas segun los filtros seleccionados min ${mincal} y max ${maxcal} reintentar con otros valores.</p>`
     }
     botonescaloriasModificado.innerHTML=htmlbotones;
+    crearFuncionBotonesDietas();
 }
 
 function ajustarValorCalorias(calorias, objetivo) {
@@ -2936,3 +2949,16 @@ function ajustarValorCalorias(calorias, objetivo) {
     return calorias;
 }
 
+function crearFuncionBotonesDietas(){
+    idCaloriasBotones.forEach((idboton, index) => {
+        const botonDietaOpcional = document.getElementById("botoncal" + idboton);
+        if (botonDietaOpcional) {
+            botonDietaOpcional.addEventListener('click', () => {
+                datosUsuario.cal = idboton;
+                localStorage.setItem("datosUsuario", JSON.stringify(datosUsuario));
+                window.location.href = "index.html";
+            });
+        }
+    });
+    
+}
