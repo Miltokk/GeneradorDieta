@@ -2398,7 +2398,7 @@ if (datosGuardados) {
 
         contennidoDivSolicitud.innerHTML = `<div id="sinDietaSegunCal">
         <h1>Selecciona las calorias</h1>
-        <p>No contamos con una dieta segun las calorias a consumir sin embargo te proponemos algunas tu indice calorico es de: ${datosUsuario.cal.toFixed(0)} </p>
+        <p>No contamos con una dieta segun las calorias a consumir sin embargo te proponemos algunas tu indice calorico es de: ${datosUsuario.cal} </p>
         <p>Por lo cual deberas seleccionar para tu objetivo que es ${datosUsuario.objetivo} alguna de las que se muestran a continuacion sin que sea tan drastico el cambio calorico a lo sugerido: </p>
         <p>Contamos con una busqueda en caso de requerir consultar en un rango de dietas segun las calorias: </p>
         <label for="caloriasmin">Calorias Minimas :</label>
@@ -2406,6 +2406,7 @@ if (datosGuardados) {
         <label for="caloriasmax">Calorias Maximas :</label>
         <input type="number" id="rangomax" name="caloriasmax" min="1500"/>
         <button id="botonBuscarCalorias">Buscar</button>
+        <button id="limpiarFiltros">Refrescar</button>
         <p>Listado de dietas:</p>
         <div id="botonesCalorias">
         ${opcionesDietas(datosUsuario.cal, datosUsuario.objetivo)}   
@@ -2430,6 +2431,11 @@ if (datosGuardados) {
             let inputMax=parseInt(document.getElementById("rangomax").value);
             filtrarDietaSegunRangoCliente(inputMin,inputMax);
         });
+        let botonlimpiarFiltros=document.getElementById("limpiarFiltros");
+        botonlimpiarFiltros.addEventListener('click', function (event) {
+            window.location.href = "index.html";
+        });
+        
 
         let botonLimpiarDatosStorage = document.getElementById("regresarFormulario");
         botonLimpiarDatosStorage.addEventListener('click', function (event) {
@@ -2908,6 +2914,9 @@ function filtrarDietaSegunRangoCliente(mincal, maxcal) {
             htmlbotones += `<button id="botoncal${dia.dieta.calorias_totales}">${dia.dieta.calorias_totales}</button>`
         }
     });
+    if (htmlbotones==''){
+        htmlbotones=`<p>No tenemos dietas segun los filtros seleccionados min ${mincal} y max ${maxcal} reintentar con otros valores.</p>`
+    }
     botonescaloriasModificado.innerHTML=htmlbotones;
 }
 
