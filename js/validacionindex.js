@@ -2397,6 +2397,7 @@ if (datosGuardados) {
     if (dietaSegunCalorias.length == 0) {
 
         contennidoDivSolicitud.innerHTML = `<div id="sinDietaSegunCal">
+        <div id="divTextoSinDieta">
         <h1>Selecciona las calorias</h1>
         <p>No contamos con una dieta segun las calorias a consumir sin embargo te proponemos algunas tu indice calorico es de: ${datosUsuario.cal} </p>
         <p>Por lo cual deberas seleccionar para tu objetivo que es ${datosUsuario.objetivo} alguna de las que se muestran a continuacion sin que sea tan drastico el cambio calorico a lo sugerido: </p>
@@ -2408,12 +2409,15 @@ if (datosGuardados) {
         <button id="botonBuscarCalorias">Buscar</button>
         <button id="limpiarFiltros">Refrescar</button>
         <p>Listado de dietas:</p>
+        </div>
         <div id="botonesCalorias">
         ${opcionesDietas(datosUsuario.cal, datosUsuario.objetivo)}   
         </div>
         <p>Nota: Esto cambiara las calorias de la dieta en base a las calorias seleccionadas.</p>   
         <button id="regresarFormulario">Regresar a formulario</button>  
-        </div>`
+        </div>
+        </div>
+        `
         var popupWindow = document.getElementById("sinDietaSegunCal");
         idCaloriasBotones.forEach((idboton, index) => {
             const botonDietaOpcional = document.getElementById("botoncal" + idboton);

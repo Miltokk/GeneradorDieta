@@ -100,6 +100,10 @@ h1{
     left: 0;
     z-index: 10;    
 }  
+#divTextoSinDieta{
+    position: grid;
+    grid-template-columns:repeat(1, 1fr) ;
+}
 #sinDietaSegunCal h1 {
     color:#000;
 }
@@ -110,5 +114,13 @@ h1{
     }
     .calendario {
     grid-template-columns: repeat(1, 1fr);
+    }
+    #sinDietaSegunCal {
+        width: 50vw;
+        height: 100%;
+    }
+    #divTextoSinDieta{
+        position: grid;
+        grid-template-columns:repeat(3, 1fr) ;
     }
 }
