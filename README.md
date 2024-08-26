@@ -17,7 +17,7 @@ Presentar una aplicacion que utilice JavaScript para soilucionar un problema Rea
 Utilizar Javascript para mejorar la interaccion y dinamismo de la pagina, generando una interfaz coherente y atractiva
 
 ## Objetivos especificos
-1.- Contar con una estructura de datos clara, basada en Arrays y Objetos.
+Contar con una estructura de datos clara, basada en Arrays y Objetos.
 Utilizar Funciones, Condiciones e iteradores para manipular los datos de la app
 Generar y Manipular el DOM. Crear vistas a partir de datos de la app y generar eventos para responder a la interaccion del usuario. Utilizando alguna libreria relevante para el simulador
 Utilizar Asincronia y fetch para cargar los datos estaticos o consumir una API.
