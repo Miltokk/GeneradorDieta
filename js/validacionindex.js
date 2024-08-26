@@ -1,4 +1,4 @@
-fetch("../assets/dietas.json")
+fetch("./assets/dietas.json")
 .then(response => response.json())
 .then(dietas=> principal(dietas)).catch(error=> console.log(error))
 
