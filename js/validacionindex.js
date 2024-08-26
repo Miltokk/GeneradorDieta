@@ -4,7 +4,7 @@ fetch('./assets/dietas.json')
 
 let idCaloriasBotones = [];
 
-let lunes = false, martes = false, miercoles = false, jueves = false, viernes = false, sabado = false, doming = false;
+let lunes = false, martes = false, miercoles = false, jueves = false, viernes = false, sabado = false, domingo = false;
 
 //Se valida si existe los datos guardados del cliente si se encuentra guardado se limpia el Contenido y se muestra la dieta segun la informacion del localstorage
 function principal (dietas){
